@@ -1,0 +1,15 @@
+---
+- hosts: all
+  become: yes
+  tasks: 
+   - name: i want to install webServer
+     apt:
+      name: apache2
+      status: present
+      when: ansible_os_family == "Debina"
+
+   - name: i want to start on ubuntu webserver
+     service:
+        name: apache2
+        state: started  
+     when: ansible_os_family == "Debina"   
