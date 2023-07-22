@@ -1,2 +1,17 @@
+[myWebServer]
 172.31.39.220
 172.31.37.88
+
+
+[myaapServer]
+172.31.39.220
+172.31.37.88
+
+[myDBServer]
+172.31.39.220
+172.31.37.88
+
+[myWebServer:vars]
+myvar=value
+mywebpackforubuntu=apache2
+mywebappforredHat=httpd
