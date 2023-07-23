@@ -10,3 +10,14 @@
      copy:
        src: myindexfile
        dest: /var/www/html/index.html
+   - name: i want download iternet files
+     get_url:
+         url: https://example.com/path/file.conf
+         dest: /home/ubuntu/
+     force_basic_auth: yes    
+
+   - name: i want to install dynamic file into nodes
+     template:
+         src: myindex.j2
+         dest: /var/www/html/index.html 
+
