@@ -10,6 +10,7 @@
      copy:
        src: myindexfile
        dest: /var/www/html/index.html
+
    - name: i want download iternet files
      get_url:
          url: https://example.com/path/file.conf
@@ -19,5 +20,14 @@
    - name: i want to install dynamic file into nodes
      template:
          src: myindex.j2
-         dest: /var/www/html/index.html 
+         dest: /var/www/html/index.html
+         notify: restartwebseerever
+
+     handlers:
+   - name: restartwebseerever
+     service:
+      name: apache2
+      state: restarted
+
+
 
