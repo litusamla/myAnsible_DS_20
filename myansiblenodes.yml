@@ -1,0 +1,17 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+    - name: create ansible nodes
+      ec2:
+       key_name: mumbai_20july
+      instance_type: t2.micro
+      image: ami-05e39dd14443463cd
+      wait: yes
+      group: sg-06cf74fdf8c24c11d
+      count: 2
+      region: us-east-2
+      vpc_subnet_id: subnet-083979880d99797dc
+      assign_public_ip: yes
+      vinstance_tags:
+         Name: ansibleNodes
